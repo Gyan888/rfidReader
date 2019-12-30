@@ -17,6 +17,5 @@ class Config(object):
     CLIENT_username="mj123"
     CLIENT_password="mj123"
     HOSTNAME="sbsy.co.in"
-    topic="/home/rfid"
-    CLIENT_port=5001
+    CLIENT_port=8883
     CLIENT_topic="/home/rfid/{}"

@@ -21,9 +21,9 @@ def start():
     while(True):
         data=read_rfid()
         if (data.get("status",False)):
-            print ("Data insude ",data["data"])
+            print ("Data insude ",data["data"],Config.CLIENT_topic.format(allLoc.id))            
             publish.single(Config.CLIENT_topic.format(allLoc.id), payload=data["data"], qos=2, retain=False, hostname=Config.HOSTNAME,
-                       port=Config.CLIENT_port, client_id="", keepalive=60, will=None,tls=None, 
+                       port=Config.CLIENT_port, client_id="", keepalive=60, will=None,tls = {'ca_certs': '/etc/ssl/certs/ca-certificates.crt'}, 
                        protocol=mqtt.MQTTv31,auth={'username':Config.CLIENT_username, 'password':Config.CLIENT_password})
             print ("Message sent successfuly")
 
