@@ -6,4 +6,5 @@ flask_marshmallow
 apscheduler
 flask_cors
 flask_mail
+paho-mqtt
 
