@@ -19,3 +19,4 @@ class Config(object):
     HOSTNAME="localhost"
     CLIENT_port=1883
     CLIENT_topic="/home/rfid/{}"
+    url = "http://api.sbsy.in/api/Attendance/MarkUserAttendance"

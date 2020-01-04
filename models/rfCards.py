@@ -18,15 +18,17 @@ class Rfid(db.Model):
 class LocationDetails(db.Model):
     __tablename__="LocationDetails"
     id = db.Column(db.Integer, primary_key=True)
-    locationName=db.Column(db.String(),unique=True)
+    gatewayId=db.Column(db.Integer, unique=True)
+    locationName=db.Column(db.String())
     createdDate=db.Column(db.DateTime)
     
     def __repr__(self):
         return '<locationName {}>'.format(self.locationName)
 
     
-    def __init__(self,name):
+    def __init__(self,name,gatewayId):
         self.locationName=name
         self.createdDate = datetime.datetime.now()
+        self.gatewayId=gatewayId
         
 
