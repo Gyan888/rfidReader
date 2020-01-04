@@ -16,6 +16,6 @@ class Config(object):
     MAIL_USE_SSL = True
     CLIENT_username="mj123"
     CLIENT_password="mj123"
-    HOSTNAME="sbsy.co.in"
-    CLIENT_port=8883
+    HOSTNAME="localhost"
+    CLIENT_port=1883
     CLIENT_topic="/home/rfid/{}"

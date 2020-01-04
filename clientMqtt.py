@@ -45,7 +45,7 @@ def mqttProcess():
     def on_connect(client, userdata, flags, rc):
         print("Connected with result code " + str(rc))
         print ("Making Default Values____________________________________________________")
-        client.subscribe("/home/rfid/#")
+        client.subscribe("/home/rfid/1")
         threading.Thread(target=start).start()
         
     client = mqtt.Client()
@@ -53,8 +53,8 @@ def mqttProcess():
     client.on_message = on_message
     client.on_publish = on_publish
     client.on_log = on_log
-    client.tls_set('/etc/ssl/certs/ca-certificates.crt',tls_version=2)
-    client.username_pw_set(Config.CLIENT_username,Config.CLIENT_password)
+    #client.tls_set('/etc/ssl/certs/ca-certificates.crt',tls_version=2)
+    #client.username_pw_set(Config.CLIENT_username,Config.CLIENT_password)
     client.connect(Config.HOSTNAME, Config.CLIENT_port, 60)
     client.loop_forever()
 

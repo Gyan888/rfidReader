@@ -1,4 +1,4 @@
-from app import db,ma
+from app import db
 import datetime
 class Rfid(db.Model):
     __tablename__ = "rfidScanned"    
@@ -30,6 +30,3 @@ class LocationDetails(db.Model):
         self.createdDate = datetime.datetime.now()
         
 
-class RfSchema(ma.Schema):
-    class Meta:
-        fields = ('number', 'has_transfered',"locationName")
