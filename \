@@ -31,17 +31,16 @@ def start():
             payload={                        
                         "school_code":allLoc.id,
                         "attendance_timestamp":timestamp,
-                        "rf_id":data["data"],
+                        "rfId":data["data"],
                         "gwId":allLoc.gatewayId               
                     }
             headers = {
                      'Content-Type': 'application/json'
                     }
-            print (payload)
             try:
                 response = requests.request("POST", Config.url, headers=headers,
                                             data = json.dumps(payload))
-                print ("response from server ",response.text)
+                print ("response from server ",response.json())
             except Exception as ex:
                 print ("exception in server resp ",ex)
                     
