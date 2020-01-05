@@ -14,9 +14,9 @@ class Config(object):
     MAIL_PASSWORD= "****"
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
-    CLIENT_username="mj123"
-    CLIENT_password="mj123"
     HOSTNAME="localhost"
     CLIENT_port=1883
     CLIENT_topic="/home/rfid/{}"
     url = "http://api.sbsy.in/api/Attendance/MarkUserAttendance"
+    FORMAT = '%(asctime)-15s   %(message)s'
+    SCHEDULLE_TIME=30
